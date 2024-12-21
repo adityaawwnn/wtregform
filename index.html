@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTU Exam Registration Form</title>
+    <link rel="stylesheet" href="regstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>VTU Exam Registration Form</h1>
+            <p class="subtitle">Please fill in the details to complete your exam registration.</p>
+
+            <!-- Properly structured form -->
+            <form action="submit.php" method="POST" id="examRegistrationForm" class="registration-form">
+                <div class="form-group">
+                    <label for="usn">University Seat Number (USN)</label>
+                    <input type="text" id="usn" name="usn" placeholder="Enter your USN" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="arrear">Arrear</label>
+                    <select id="arrear" name="arrear" required>
+                        <option value="" disabled selected>Select if you have any arrear</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <h3>Subjects for the Exam</h3>
+                <div class="form-group">
+                    <label for="subject1">Software Engineering and Project Management (BCS501)</label>
+                    <input type="checkbox" id="subject1" name="subjects[]" value="bcs501">
+                </div>
+                <div class="form-group">
+                    <label for="subject2">Computer Network (BCS502)</label>
+                    <input type="checkbox" id="subject2" name="subjects[]" value="bcs502">
+                </div>
+                <div class="form-group">
+                    <label for="subject3">Theory of Computation (BCS503)</label>
+                    <input type="checkbox" id="subject3" name="subjects[]" value="bcs503">
+                </div>
+                <div class="form-group">
+                    <label for="subject4">Web Tech Lab (BCSL504)</label>
+                    <input type="checkbox" id="subject4" name="subjects[]" value="bcsL504">
+                </div>
+                <div class="form-group">
+                    <label for="subject5">Artificial Intelligence (BCS515B)</label>
+                    <input type="checkbox" id="subject5" name="subjects[]" value="bcs515b">
+                </div>
+
+                <div class="form-group">
+                    <label for="otherSubject">Other Subjects (If any)</label>
+                    <textarea id="otherSubject" name="otherSubject" rows="3" placeholder="Please mention any additional subjects"></textarea>
+                </div>
+
+                <button type="submit" id="submitButton" class="submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <div id="output" class="output hidden">
+            <h2>Registration Successful</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
+</html>
